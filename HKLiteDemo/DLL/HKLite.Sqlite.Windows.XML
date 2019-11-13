@@ -4,32 +4,10 @@
         <name>HKLite.Sqlite.Windows</name>
     </assembly>
     <members>
-        <member name="M:HKLite.OrderBy_.OrderBy(System.String)">
+        <member name="M:HKLite.Delete_.Where">
             <summary>
-            升序排序
+            删除条件
             </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.OrderBy_.OrderByDesc(System.String)">
-            <summary>
-            降序排序
-            </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.GroupBy_.OrderBy(System.String)">
-            <summary>
-            升序排序
-            </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.GroupBy_.OrderByDesc(System.String)">
-            <summary>
-            降序排序
-            </summary>
-            <param name="columnName"></param>
             <returns></returns>
         </member>
         <member name="T:HKLite.ReaderDelegateHandler">
@@ -50,211 +28,26 @@
             <param name="oldVersion">旧版本号</param>
             <param name="newVersion">新版本号</param>
         </member>
-        <member name="M:HKLite.IDbProvider.CreateConnection">
+        <member name="M:HKLite.IInsertBuilder`1.Insert(`0,System.String[])">
             <summary>
-            创建连接
+            插入实体
             </summary>
-            <returns></returns>
+            <param name="entity">实体</param>
+            <param name="excludeColumns">排除列</param>
         </member>
-        <member name="M:HKLite.IDbProvider.CreateConnection(System.String)">
+        <member name="M:HKLite.IInsertBuilder`1.Insert(`0)">
             <summary>
-            创建连接
+            插入实体
             </summary>
-            <param name="connectionString"></param>
-            <returns></returns>
+            <param name="entity">实体</param>
         </member>
-        <member name="M:HKLite.IDbProvider.GetConnectionString(System.String,System.String)">
+        <member name="M:HKLite.IInsertBuilder`1.Run">
             <summary>
-            获取连接字符串
+            执行插入操作，若用事务，则应执行Itransacuilder中的Run()方法，否则报错
             </summary>
-            <param name="dbPath"></param>
-            <param name="password"></param>
-            <returns></returns>
+            <returns>返回插入的记录数</returns>
         </member>
-        <member name="M:HKLite.IDbProvider.CreateCommand">
-            <summary>
-            创建命令
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDbProvider.CreateParameter(System.String,System.Object)">
-            <summary>
-            创建参数
-            </summary>
-            <param name="paramName"></param>
-            <param name="paramValue"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDbProvider.CreateParameter">
-            <summary>
-            创建参数
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDbProvider.CreateDataAdapter">
-            <summary>
-            创建适配器
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDbProvider.CreateDatabase(System.String,System.String)">
-            <summary>
-            创建数据库
-            </summary>
-            <param name="dbPath"></param>
-            <param name="password"></param>
-        </member>
-        <member name="M:HKLite.IDbProvider.GetTableScript(System.Type)">
-            <summary>
-            获取数据库表脚本
-            </summary>
-            <param name="entityType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDbProvider.GetNewColumnsCommandTexts(HKLite.DalLayerInfo,System.Type)">
-            <summary>
-             获取表中新增列的sql脚本，如果该表不存在，则返回创建表的脚本
-            </summary>
-            <param name="dalInfo"></param>
-            <param name="entityType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDbProvider.GetQueryText(System.Int32,System.String[],System.String,System.String)">
-            <summary>
-            获取查询脚本
-            </summary>
-            <param name="top"></param>
-            <param name="columns"></param>
-            <param name="tableName"></param>
-            <param name="where"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.DbProvider.GetColumnType(System.Reflection.PropertyInfo,System.String,System.Object,System.Boolean)">
-            <summary>
-            获取字段类型
-            </summary>
-            <param name="p"></param>
-            <param name="dataType"></param>
-            <param name="length"></param>
-            <param name="identity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.Equal(System.String,System.Object)">
-            <summary>
-            等于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.LargerOrEqual(System.String,System.Object)">
-            <summary>
-            大于或等于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.Larger(System.String,System.Object)">
-            <summary>
-            大于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.SmallerOrEqual(System.String,System.Object)">
-            <summary>
-            小于或等于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.Smaller(System.String,System.Object)">
-            <summary>
-            小于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.IsNull(System.String)">
-            <summary>
-            为null
-            </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.Like(System.String,System.String)">
-            <summary>
-            模糊查询：like %xxx%
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.LikeLeft(System.String,System.String)">
-            <summary>
-            模糊查询：like %xxx
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.AndOr.LikeRight(System.String,System.String)">
-            <summary>
-            模糊查询：like xxx%
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="F:HKLite.Set_.DitUpdateInfo">
-            <summary>
-            更新的属性和值集合
-            </summary>
-        </member>
-        <member name="M:HKLite.Set_.Set(System.String,System.Object)">
-            <summary>
-            设置更新字段
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Set_.Where">
-            <summary>
-            更新条件
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Config.GetValue(System.String)">
-            <summary>
-            取配置文件节点值
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDeleteBuilder`1.Delete">
-            <summary>
-            删除
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IDeleteBuilder`1.DeleteByKey(System.Object)">
-            <summary>
-            根据主键删除
-            </summary>
-            <param name="keyValue">主键值</param>
-        </member>
-        <member name="M:HKLite.IDeleteBuilder`1.Run">
-            <summary>
-            执行删除操作，若用事务，则必须执行Itransacuilder中的Run()方法
-            </summary>
-            <returns>返回删除的记录数</returns>
-        </member>
-        <member name="P:HKLite.IDeleteBuilder`1.SqlCommands">
+        <member name="P:HKLite.IInsertBuilder`1.SqlCommands">
             <summary>
             当前要执行的Sql脚本集合
             </summary>
@@ -297,374 +90,6 @@
             <summary>
             删除所有记录，返回删除的记录数
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IInsertBuilder`1.Insert(`0,System.String[])">
-            <summary>
-            插入实体
-            </summary>
-            <param name="entity">实体</param>
-            <param name="excludeColumns">排除列</param>
-        </member>
-        <member name="M:HKLite.IInsertBuilder`1.Insert(`0)">
-            <summary>
-            插入实体
-            </summary>
-            <param name="entity">实体</param>
-        </member>
-        <member name="M:HKLite.IInsertBuilder`1.Run">
-            <summary>
-            执行插入操作，若用事务，则应执行Itransacuilder中的Run()方法，否则报错
-            </summary>
-            <returns>返回插入的记录数</returns>
-        </member>
-        <member name="P:HKLite.IInsertBuilder`1.SqlCommands">
-            <summary>
-            当前要执行的Sql脚本集合
-            </summary>
-        </member>
-        <member name="M:HKLite.InsertBuilder`1.Run">
-            <summary>
-            执行插入操作(只执行首条SQL语句)
-            </summary>
-            <returns>返回受影响的行数</returns>
-        </member>
-        <member name="M:HKLite.InsertBuilder`1.CreateSqlCommand">
-            <summary>
-            创建脚本
-            </summary>
-        </member>
-        <member name="M:HKLite.Update_.Set(System.String,System.Object)">
-            <summary>
-            设置更新字段
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:HKLite.DALayerBuilder">
-            <summary>
-            创建DALayer类
-            </summary>
-        </member>
-        <member name="M:HKLite.DALayerBuilder.CreateLayer(System.String,System.String,System.String,System.Int32,System.Boolean)">
-            <summary>
-            创建DALayer 实例
-            </summary>
-            <param name="dbPath">数据库绝对路径</param>
-            <param name="password">密码</param>
-            <param name="entityDllName">实体程序集DLL名称</param>
-            <param name="dbVersion">数据库版本号</param>
-            <param name="isLongConnection">是否长连接</param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.Select">
-            <summary>
-            查询
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.Select(System.Int32)">
-            <summary>
-            查询 前top条记录
-            </summary>
-            <param name="topCount">返回的记录数</param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.Select(System.String[])">
-            <summary>
-            查询 指定列
-            </summary>
-            <param name="selectColumns">查询列</param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.Select(System.Int32,System.String[])">
-            <summary>
-            查询 前top条记录，指定列
-            </summary>
-            <param name="topCount">返回的记录数</param>
-            <param name="selectColumns">查询列</param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.QueryTable">
-            <summary>
-            获取DataTable
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.QueryByKey(System.Object)">
-            <summary>
-            根据主键获取实体
-            </summary>
-            <param name="keyValue"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.QuerySingle">
-            <summary>
-            获取一个实体
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.Query">
-            <summary>
-            根据条件获取实体集合
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.QueryAll">
-            <summary>
-            获取所有实体集合
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.Count">
-            <summary>
-            获取查询结果中的记录数
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IQueryBuilder`1.QueryAttribute">
-            <summary>
-            获取属性值
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:HKLite.IQueryBuilder`1.CustomSqlCommand">
-            <summary>
-            获取或设置自定义脚本
-            </summary>
-        </member>
-        <member name="P:HKLite.IQueryBuilder`1.SqlCommands">
-            <summary>
-            当前要执行的Sql脚本集合
-            </summary>
-        </member>
-        <member name="M:HKLite.QueryBuilder`1.QueryTable">
-            <summary>
-            取DataTable
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.QueryBuilder`1.QuerySingle">
-            <summary>
-            取单个实体类
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.QueryBuilder`1.Query">
-            <summary>
-            取实体类集合
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.QueryBuilder`1.Count">
-            <summary>
-            取记录数
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.QueryBuilder`1.QueryAttribute">
-            <summary>
-            取字段值
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.ITransacBuilder.QueryBuilder``1">
-            <summary>
-            获取QueryBuilder实例，此方法与IDALayer中的QueryBuilder()方法效果一样
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.ITransacBuilder.InsertBuilder``1">
-            <summary>
-            获取InsertBuilder实例
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.ITransacBuilder.UpdateBuilder``1">
-            <summary>
-            获取UpdateBuilder实例
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.ITransacBuilder.DeleteBuilder``1">
-            <summary>
-            获取DeleteBuilder实例
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.ITransacBuilder.AddCommandText(System.String)">
-            <summary>
-            添加自定义脚本
-            </summary>
-            <param name="cmdText"></param>
-        </member>
-        <member name="M:HKLite.ITransacBuilder.Run">
-            <summary>
-            执行事务
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.TransacBuilder.#ctor(HKLite.DalLayerInfo,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            构造方法
-            </summary>
-        </member>
-        <member name="M:HKLite.TransacBuilder.Run">
-            <summary>
-            执行事务
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.HKLiteTransaction.Commit">
-            <summary>
-            提交事务。提交完成后，若不是长连接，则销毁当前连接
-            </summary>
-        </member>
-        <member name="M:HKLite.HKLiteTransaction.Rollback">
-            <summary>
-            回滚事务。回滚完成后，若不是长连接，则销毁当前连接
-            </summary>
-        </member>
-        <member name="M:HKLite.IUpdateBuilder`1.Update">
-            <summary>
-            更新表
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.IUpdateBuilder`1.UpdateByKey(`0)">
-            <summary>
-            根据主键更新表，entity中需要更新的值不等于null,否则为null。主键对应的属性值不能为null，不更新主键
-            </summary>
-            <param name="entity">更新实体</param>
-        </member>
-        <member name="M:HKLite.IUpdateBuilder`1.UpdateByKey(`0,System.String[])">
-            <summary>
-            根据主键更新表，entity中需要更新的值不等于null,否则为null。主键对应的属性值不能为null，不更新主键
-            </summary>
-            <param name="entity">更新实体</param>
-            <param name="excludeColumns">不更新的字段</param>
-        </member>
-        <member name="M:HKLite.IUpdateBuilder`1.Run">
-            <summary>
-            执行更新操作。若使用事务，则应执行ITransacBuilder中的Run()方法，否则报错
-            </summary>
-            <returns>返回更新的记录数</returns>
-        </member>
-        <member name="P:HKLite.IUpdateBuilder`1.SqlCommands">
-            <summary>
-            当前要执行的Sql脚本集合
-            </summary>
-        </member>
-        <member name="M:HKLite.UpdateBuilder`1.UpdateByKey(`0)">
-            <summary>
-            根据主键值更新，entity中主键字段和需要更新的字段不为null，不更新字段全为null
-            </summary>
-            <param name="entity"></param>
-        </member>
-        <member name="M:HKLite.UpdateBuilder`1.Run">
-            <summary>
-            执行更新操作(只执行首条SQL语句)
-            </summary>
-            <returns>返回受影响的行数</returns>
-        </member>
-        <member name="M:HKLite.UpdateBuilder`1.CreateSqlCommand">
-            <summary>
-            创建脚本
-            </summary>
-        </member>
-        <member name="M:HKLite.UpdateBuilder`1.GetEntityCmd(HKLite.UpdateBuilder{`0}.UpdateObject)">
-            <summary>
-            被更新字段参数名加上前缀"u", 如 Name=@uName，以此来使其与条件参数不同
-            </summary>
-            <param name="updateObject"></param>
-            <returns></returns>
-        </member>
-        <member name="T:HKLite.BulkCopyHandler">
-            <summary>
-            批量复制代理
-            </summary>
-        </member>
-        <member name="M:HKLite.Where_.Custom(System.String)">
-            <summary>
-            自定义查询条件，如果需要，在参数中加where，如：where column1='a' and column2='b'
-            </summary>
-            <param name="customWhere"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.Equal(System.String,System.Object)">
-            <summary>
-            等于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.LargerOrEqual(System.String,System.Object)">
-            <summary>
-            大于或等于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.Larger(System.String,System.Object)">
-            <summary>
-            大于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.SmallerOrEqual(System.String,System.Object)">
-            <summary>
-            小于或等于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.Smaller(System.String,System.Object)">
-            <summary>
-            小于
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.IsNull(System.String)">
-            <summary>
-            等于null
-            </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.Like(System.String,System.String)">
-            <summary>
-            模糊查询：like %xxx%
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.LikeLeft(System.String,System.String)">
-            <summary>
-            模糊查询：like %xxx
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Where_.LikeRight(System.String,System.String)">
-            <summary>
-            模糊查询：like xxx%
-            </summary>
-            <param name="columnName"></param>
-            <param name="value"></param>
             <returns></returns>
         </member>
         <member name="M:HKLite.IDALayerBase.Init">
@@ -803,11 +228,561 @@
             获取数据库路径
             </summary>
         </member>
-        <member name="M:HKLite.Delete_.Where">
+        <member name="M:HKLite.IQueryBuilder`1.Select">
             <summary>
-            删除条件
+            查询
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.Select(System.Int32)">
+            <summary>
+            查询 前top条记录
+            </summary>
+            <param name="topCount">返回的记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.Select(System.String[])">
+            <summary>
+            查询 指定列
+            </summary>
+            <param name="selectColumns">查询列</param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.Select(System.Int32,System.String[])">
+            <summary>
+            查询 前top条记录，指定列
+            </summary>
+            <param name="topCount">返回的记录数</param>
+            <param name="selectColumns">查询列</param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.QueryTable">
+            <summary>
+            获取DataTable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.QueryByKey(System.Object)">
+            <summary>
+            根据主键获取实体
+            </summary>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.QuerySingle">
+            <summary>
+            获取一个实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.Query">
+            <summary>
+            根据条件获取实体集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.QueryAll">
+            <summary>
+            获取所有实体集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.Count">
+            <summary>
+            获取查询结果中的记录数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IQueryBuilder`1.QueryAttribute">
+            <summary>
+            获取属性值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:HKLite.IQueryBuilder`1.CustomSqlCommand">
+            <summary>
+            获取或设置自定义脚本
+            </summary>
+        </member>
+        <member name="P:HKLite.IQueryBuilder`1.SqlCommands">
+            <summary>
+            当前要执行的Sql脚本集合
+            </summary>
+        </member>
+        <member name="M:HKLite.QueryBuilder`1.QueryTable">
+            <summary>
+            取DataTable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.QueryBuilder`1.QuerySingle">
+            <summary>
+            取单个实体类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.QueryBuilder`1.Query">
+            <summary>
+            取实体类集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.QueryBuilder`1.Count">
+            <summary>
+            取记录数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.QueryBuilder`1.QueryAttribute">
+            <summary>
+            取字段值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.HKLiteTransaction.Commit">
+            <summary>
+            提交事务。提交完成后，若不是长连接，则销毁当前连接
+            </summary>
+        </member>
+        <member name="M:HKLite.HKLiteTransaction.Rollback">
+            <summary>
+            回滚事务。回滚完成后，若不是长连接，则销毁当前连接
+            </summary>
+        </member>
+        <member name="M:HKLite.Common.GetWhereText(HKLite.Where_)">
+            <summary>
+            取WHERE 脚本
+            </summary>
+            <param name="myWhere"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Common.GetFileName(System.String,System.Boolean)">
+            <summary>
+            从文件路径中取文件名
+            </summary>
+            <param name="fullPath">文件路径</param>
+            <param name="ext">是否取扩展名</param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Common.GetMd5(System.String)">
+            <summary>
+            取文件MD5值
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.InsertBuilder`1.Run">
+            <summary>
+            执行插入操作(只执行首条SQL语句)
+            </summary>
+            <returns>返回受影响的行数</returns>
+        </member>
+        <member name="M:HKLite.InsertBuilder`1.CreateSqlCommand">
+            <summary>
+            创建脚本
+            </summary>
+        </member>
+        <member name="M:HKLite.IDbProvider.CreateConnection">
+            <summary>
+            创建连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.CreateConnection(System.String)">
+            <summary>
+            创建连接
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.GetConnectionString(System.String,System.String)">
+            <summary>
+            获取连接字符串
+            </summary>
+            <param name="dbPath"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.CreateCommand">
+            <summary>
+            创建命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.CreateParameter(System.String,System.Object)">
+            <summary>
+            创建参数
+            </summary>
+            <param name="paramName"></param>
+            <param name="paramValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.CreateParameter">
+            <summary>
+            创建参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.CreateDataAdapter">
+            <summary>
+            创建适配器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.CreateDatabase(System.String,System.String)">
+            <summary>
+            创建数据库
+            </summary>
+            <param name="dbPath"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:HKLite.IDbProvider.GetTableScript(System.Type)">
+            <summary>
+            获取数据库表脚本
+            </summary>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.GetNewColumnsCommandTexts(HKLite.DalLayerInfo,System.Type)">
+            <summary>
+             获取表中新增列的sql脚本，如果该表不存在，则返回创建表的脚本
+            </summary>
+            <param name="dalInfo"></param>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDbProvider.GetQueryText(System.Int32,System.String[],System.String,System.String)">
+            <summary>
+            获取查询脚本
+            </summary>
+            <param name="top"></param>
+            <param name="columns"></param>
+            <param name="tableName"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.DbProvider.GetColumnType(System.Reflection.PropertyInfo,System.String,System.Object,System.Boolean)">
+            <summary>
+            获取字段类型
+            </summary>
+            <param name="p"></param>
+            <param name="dataType"></param>
+            <param name="length"></param>
+            <param name="identity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IUpdateBuilder`1.Update">
+            <summary>
+            更新表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IUpdateBuilder`1.UpdateByKey(`0)">
+            <summary>
+            根据主键更新表，entity中需要更新的值不等于null,否则为null。主键对应的属性值不能为null，不更新主键
+            </summary>
+            <param name="entity">更新实体</param>
+        </member>
+        <member name="M:HKLite.IUpdateBuilder`1.UpdateByKey(`0,System.String[])">
+            <summary>
+            根据主键更新表，entity中需要更新的值不等于null,否则为null。主键对应的属性值不能为null，不更新主键
+            </summary>
+            <param name="entity">更新实体</param>
+            <param name="excludeColumns">不更新的字段</param>
+        </member>
+        <member name="M:HKLite.IUpdateBuilder`1.Run">
+            <summary>
+            执行更新操作。若使用事务，则应执行ITransacBuilder中的Run()方法，否则报错
+            </summary>
+            <returns>返回更新的记录数</returns>
+        </member>
+        <member name="P:HKLite.IUpdateBuilder`1.SqlCommands">
+            <summary>
+            当前要执行的Sql脚本集合
+            </summary>
+        </member>
+        <member name="M:HKLite.Select_.#ctor">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="M:HKLite.Select_.Where">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="M:HKLite.Select_.OrderBy(System.String)">
+            <summary>
+            升序排序
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Select_.OrderByDesc(System.String)">
+            <summary>
+            降序排序
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.UpdateBuilder`1.UpdateByKey(`0)">
+            <summary>
+            根据主键值更新，entity中主键字段和需要更新的字段不为null，不更新字段全为null
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:HKLite.UpdateBuilder`1.Run">
+            <summary>
+            执行更新操作(只执行首条SQL语句)
+            </summary>
+            <returns>返回受影响的行数</returns>
+        </member>
+        <member name="M:HKLite.UpdateBuilder`1.CreateSqlCommand">
+            <summary>
+            创建脚本
+            </summary>
+        </member>
+        <member name="M:HKLite.UpdateBuilder`1.GetEntityCmd(HKLite.UpdateBuilder{`0}.UpdateObject)">
+            <summary>
+            被更新字段参数名加上前缀"u", 如 Name=@uName，以此来使其与条件参数不同
+            </summary>
+            <param name="updateObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.DALayer.Init">
+            <summary>
+            初始化数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.ITransacBuilder.QueryBuilder``1">
+            <summary>
+            获取QueryBuilder实例，此方法与IDALayer中的QueryBuilder()方法效果一样
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.ITransacBuilder.InsertBuilder``1">
+            <summary>
+            获取InsertBuilder实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.ITransacBuilder.UpdateBuilder``1">
+            <summary>
+            获取UpdateBuilder实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.ITransacBuilder.DeleteBuilder``1">
+            <summary>
+            获取DeleteBuilder实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.ITransacBuilder.AddCommandText(System.String)">
+            <summary>
+            添加自定义脚本
+            </summary>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:HKLite.ITransacBuilder.Run">
+            <summary>
+            执行事务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.TransacBuilder.#ctor(HKLite.DalLayerInfo,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HKLite.TransacBuilder.Run">
+            <summary>
+            执行事务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDeleteBuilder`1.Delete">
+            <summary>
+            删除
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.IDeleteBuilder`1.DeleteByKey(System.Object)">
+            <summary>
+            根据主键删除
+            </summary>
+            <param name="keyValue">主键值</param>
+        </member>
+        <member name="M:HKLite.IDeleteBuilder`1.Run">
+            <summary>
+            执行删除操作，若用事务，则必须执行Itransacuilder中的Run()方法
+            </summary>
+            <returns>返回删除的记录数</returns>
+        </member>
+        <member name="P:HKLite.IDeleteBuilder`1.SqlCommands">
+            <summary>
+            当前要执行的Sql脚本集合
+            </summary>
+        </member>
+        <member name="M:HKLite.OrderBy_.OrderBy(System.String)">
+            <summary>
+            升序排序
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.OrderBy_.OrderByDesc(System.String)">
+            <summary>
+            降序排序
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.GroupBy_.OrderBy(System.String)">
+            <summary>
+            升序排序
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.GroupBy_.OrderByDesc(System.String)">
+            <summary>
+            降序排序
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.Equal(System.String,System.Object)">
+            <summary>
+            等于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.LargerOrEqual(System.String,System.Object)">
+            <summary>
+            大于或等于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.Larger(System.String,System.Object)">
+            <summary>
+            大于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.SmallerOrEqual(System.String,System.Object)">
+            <summary>
+            小于或等于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.Smaller(System.String,System.Object)">
+            <summary>
+            小于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.IsNull(System.String)">
+            <summary>
+            为null
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.Like(System.String,System.String)">
+            <summary>
+            模糊查询：like %xxx%
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.LikeLeft(System.String,System.String)">
+            <summary>
+            模糊查询：like %xxx
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.AndOr.LikeRight(System.String,System.String)">
+            <summary>
+            模糊查询：like xxx%
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="F:HKLite.Set_.DitUpdateInfo">
+            <summary>
+            更新的属性和值集合
+            </summary>
+        </member>
+        <member name="M:HKLite.Set_.Set(System.String,System.Object)">
+            <summary>
+            设置更新字段
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Set_.Where">
+            <summary>
+            更新条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Config.GetValue(System.String)">
+            <summary>
+            取配置文件节点值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HKLite.DALayerBuilder">
+            <summary>
+            创建DALayer类
+            </summary>
+        </member>
+        <member name="M:HKLite.DALayerBuilder.CreateLayer(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            创建DALayer 实例
+            </summary>
+            <param name="dbPath">数据库绝对路径</param>
+            <param name="password">密码</param>
+            <param name="entityDllName">实体程序集DLL名称</param>
+            <param name="dbVersion">数据库版本号</param>
+            <param name="isLongConnection">是否长连接</param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Update_.Set(System.String,System.Object)">
+            <summary>
+            设置更新字段
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.DeleteBuilder`1.Run">
+            <summary>
+            执行删除操作(只执行首条SQL语句)
+            </summary>
+            <returns>返回受影响的行数</returns>
         </member>
         <member name="P:HKLite.EntityAttribute.Identity">
             <summary>
@@ -834,26 +809,87 @@
             是否只用于显示，true-不作为表字段;false-作为表字段
             </summary>
         </member>
-        <member name="M:HKLite.Common.GetWhereText(HKLite.Where_)">
+        <member name="T:HKLite.BulkCopyHandler">
             <summary>
-            取WHERE 脚本
+            批量复制代理
             </summary>
-            <param name="myWhere"></param>
+        </member>
+        <member name="M:HKLite.Where_.Custom(System.String)">
+            <summary>
+            自定义查询条件，如果需要，在参数中加where，如：where column1='a' and column2='b'
+            </summary>
+            <param name="customWhere"></param>
             <returns></returns>
         </member>
-        <member name="M:HKLite.Common.GetFileName(System.String,System.Boolean)">
+        <member name="M:HKLite.Where_.Equal(System.String,System.Object)">
             <summary>
-            从文件路径中取文件名
+            等于
             </summary>
-            <param name="fullPath">文件路径</param>
-            <param name="ext">是否取扩展名</param>
+            <param name="columnName"></param>
+            <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:HKLite.Common.GetMd5(System.String)">
+        <member name="M:HKLite.Where_.LargerOrEqual(System.String,System.Object)">
             <summary>
-            取文件MD5值
+            大于或等于
             </summary>
-            <param name="content"></param>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Where_.Larger(System.String,System.Object)">
+            <summary>
+            大于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Where_.SmallerOrEqual(System.String,System.Object)">
+            <summary>
+            小于或等于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Where_.Smaller(System.String,System.Object)">
+            <summary>
+            小于
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Where_.IsNull(System.String)">
+            <summary>
+            等于null
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Where_.Like(System.String,System.String)">
+            <summary>
+            模糊查询：like %xxx%
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Where_.LikeLeft(System.String,System.String)">
+            <summary>
+            模糊查询：like %xxx
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HKLite.Where_.LikeRight(System.String,System.String)">
+            <summary>
+            模糊查询：like xxx%
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
             <returns></returns>
         </member>
         <member name="M:HKLite.Condition.And">
@@ -876,42 +912,6 @@
             <returns></returns>
         </member>
         <member name="M:HKLite.Condition.OrderByDesc(System.String)">
-            <summary>
-            降序排序
-            </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.DeleteBuilder`1.Run">
-            <summary>
-            执行删除操作(只执行首条SQL语句)
-            </summary>
-            <returns>返回受影响的行数</returns>
-        </member>
-        <member name="M:HKLite.DALayer.Init">
-            <summary>
-            初始化数据库
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Select_.#ctor">
-            <summary>
-            查询
-            </summary>
-        </member>
-        <member name="M:HKLite.Select_.Where">
-            <summary>
-            查询条件
-            </summary>
-        </member>
-        <member name="M:HKLite.Select_.OrderBy(System.String)">
-            <summary>
-            升序排序
-            </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:HKLite.Select_.OrderByDesc(System.String)">
             <summary>
             降序排序
             </summary>

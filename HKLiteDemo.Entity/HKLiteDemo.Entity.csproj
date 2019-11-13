@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HKLite.Sqlite.Windows, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="HKLite.Sqlite.Windows, Version=1.8.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\HKLiteDemo\DLL\HKLite.Sqlite.Windows.dll</HintPath>
     </Reference>

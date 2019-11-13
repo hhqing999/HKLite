@@ -33,9 +33,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HKLite.Sqlite.Windows, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="HKLite.Sqlite.Windows, Version=1.8.3.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -85,15 +83,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DLL\HKLite.Sqlite.Windows.dll" />
-    <Content Include="DLL\HKLite.Sqlite.Windows.XML" />
-    <Content Include="DLL\System.Data.SQLite.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\HKLiteDemo.Entity\HKLiteDemo.Entity.csproj">
       <Project>{B8F1AD8D-8BA7-4357-AAD4-57966C8A0957}</Project>
       <Name>HKLiteDemo.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\HKLite.Sqlite.Windows.dll" />
+    <Content Include="DLL\HKLite.Sqlite.Windows.XML" />
+    <Content Include="DLL\System.Data.SQLite.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
