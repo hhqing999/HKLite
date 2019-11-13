@@ -129,4 +129,4 @@ deleteBuilder.Run();
 daoUser.DeleteAll();
 ```
 ## More
-For more usage please refer to the demo.
+For more usage, please refer to the demo.
