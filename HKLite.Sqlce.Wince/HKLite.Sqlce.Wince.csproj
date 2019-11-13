@@ -1,0 +1,126 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75A2211F-32B5-4396-B03E-332C333CCF6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HKLite</RootNamespace>
+    <AssemblyName>HKLite.Sqlce.Wince</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.00</OSVersion>
+    <DeployDirSuffix>\Storage Card\testOrm</DeployDirSuffix>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <DeployDirPrefix>\</DeployDirPrefix>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>bin\Debug\HKLite.Sqlce.Wince.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\OutPut\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>..\OutPut\HKLite.Sqlce.Wince.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Public\HkLiteTransaction.cs" />
+    <Compile Include="Service\Dao.cs" />
+    <Compile Include="IDao.cs" />
+    <Compile Include="Inner\DalLayerInfo.cs" />
+    <Compile Include="IDALayerBase.cs" />
+    <Compile Include="Inner\Config.cs" />
+    <Compile Include="Provider\BulkCopyService.cs" />
+    <Compile Include="Provider\DbProvider.cs" />
+    <Compile Include="Inner\IDbProvider.cs" />
+    <Compile Include="Inner\SqlHelper.cs" />
+    <Compile Include="Inner\VersionManage.cs" />
+    <Compile Include="DALayerBuilder.cs" />
+    <Compile Include="Provider\IDALayer.cs" />
+    <Compile Include="IDeleteBuilder.cs" />
+    <Compile Include="IInsertBuilder.cs" />
+    <Compile Include="Inner\Common.cs" />
+    <Compile Include="Inner\DBHelper.cs" />
+    <Compile Include="Inner\InEnums.cs" />
+    <Compile Include="Inner\WhereEntity.cs" />
+    <Compile Include="IQueryBuilder.cs" />
+    <Compile Include="ITransacBuilder.cs" />
+    <Compile Include="IUpdateBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\AndOr.cs" />
+    <Compile Include="Public\BaseClass.cs" />
+    <Compile Include="Public\BaseInterface.cs" />
+    <Compile Include="Public\Condition.cs" />
+    <Compile Include="Public\DalyerDelegate.cs" />
+    <Compile Include="Provider\BulkCopyDelegate.cs" />
+    <Compile Include="Public\EntityAttribute.cs" />
+    <Compile Include="Public\Delete_.cs" />
+    <Compile Include="Public\GroupBy_.cs" />
+    <Compile Include="Public\OrderBy_.cs" />
+    <Compile Include="Public\Select_.cs" />
+    <Compile Include="Public\Set_.cs" />
+    <Compile Include="Public\Update_.cs" />
+    <Compile Include="Public\Where_.cs" />
+    <Compile Include="Service\DALayer.cs" />
+    <Compile Include="Service\DeleteBuilder.cs" />
+    <Compile Include="Service\InsertBuilder.cs" />
+    <Compile Include="Service\QueryBuilder.cs" />
+    <Compile Include="Service\TransacBuilder.cs" />
+    <Compile Include="Service\UpdateBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\sqlceme35.dll" />
+    <Content Include="DLL\sqlceqp35.dll" />
+    <Content Include="DLL\sqlcese35.dll" />
+    <Content Include="DLL\System.Data.SqlServerCe.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

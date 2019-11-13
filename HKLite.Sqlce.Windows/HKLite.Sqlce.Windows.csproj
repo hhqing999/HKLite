@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E2746B9-6616-44B5-8BCD-4E8AED293F08}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HKLite</RootNamespace>
+    <AssemblyName>HKLite.Sqlce.Windows</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\HKLite.Sqlce.Windows.xml</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\OutPut\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\OutPut\HKLite.Sqlce.Windows.xml</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\HKLite.Sqlce.Wince\DALayerBuilder.cs">
+      <Link>DALayerBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\IDALayerBase.cs">
+      <Link>IDALayerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\IDao.cs">
+      <Link>IDao.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\IDeleteBuilder.cs">
+      <Link>IDeleteBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\IInsertBuilder.cs">
+      <Link>IInsertBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\Common.cs">
+      <Link>Inner\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\Config.cs">
+      <Link>Inner\Config.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\DalLayerInfo.cs">
+      <Link>Inner\DalLayerInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\DBHelper.cs">
+      <Link>Inner\DBHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\IDbProvider.cs">
+      <Link>Inner\IDbProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\InEnums.cs">
+      <Link>Inner\InEnums.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\SqlHelper.cs">
+      <Link>Inner\SqlHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\VersionManage.cs">
+      <Link>Inner\VersionManage.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Inner\WhereEntity.cs">
+      <Link>Inner\WhereEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\IQueryBuilder.cs">
+      <Link>IQueryBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\ITransacBuilder.cs">
+      <Link>ITransacBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\IUpdateBuilder.cs">
+      <Link>IUpdateBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Provider\BulkCopyDelegate.cs">
+      <Link>Provider\BulkCopyDelegate.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Provider\BulkCopyService.cs">
+      <Link>Provider\BulkCopyService.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Provider\DbProvider.cs">
+      <Link>Provider\DbProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\AndOr.cs">
+      <Link>Public\AndOr.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\BaseClass.cs">
+      <Link>Public\BaseClass.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\BaseInterface.cs">
+      <Link>Public\BaseInterface.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\Condition.cs">
+      <Link>Public\Condition.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\DalyerDelegate.cs">
+      <Link>Inner\DalyerDelegate.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\Delete_.cs">
+      <Link>Public\Delete_.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\EntityAttribute.cs">
+      <Link>Public\EntityAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\GroupBy_.cs">
+      <Link>Public\GroupBy_.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\HkLiteTransaction.cs">
+      <Link>Public\HkLiteTransaction.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\OrderBy_.cs">
+      <Link>Public\OrderBy_.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\Select_.cs">
+      <Link>Public\Select_.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\Set_.cs">
+      <Link>Public\Set_.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\Update_.cs">
+      <Link>Public\Update_.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Public\Where_.cs">
+      <Link>Public\Where_.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Service\DALayer.cs">
+      <Link>Service\DALayer.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Service\Dao.cs">
+      <Link>Service\Dao.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Service\DeleteBuilder.cs">
+      <Link>Service\DeleteBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Service\InsertBuilder.cs">
+      <Link>Service\InsertBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Service\QueryBuilder.cs">
+      <Link>Service\QueryBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Service\TransacBuilder.cs">
+      <Link>Service\TransacBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\HKLite.Sqlce.Wince\Service\UpdateBuilder.cs">
+      <Link>Service\UpdateBuilder.cs</Link>
+    </Compile>
+    <Compile Include="Provider\IDALayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\sqlceca35.dll" />
+    <Content Include="DLL\sqlceme35.dll" />
+    <Content Include="DLL\sqlceqp35.dll" />
+    <Content Include="DLL\sqlcese35.dll" />
+    <Content Include="DLL\System.Data.SqlServerCe.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
