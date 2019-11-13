@@ -2,7 +2,7 @@
 * A simple ORM for .net, support sqlite,sqlce,mysql and sqlserver.<br/>
 * Can use in both windows and windows ce applications while using sqlite or sqlce.
 * Auto create if the database file does not exist while using sqlite or sqlce.
-## Create a entity class
+## Create entity class
 ```C#
 [HKLite.Entity]
 public class SysUser
