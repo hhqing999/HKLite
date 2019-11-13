@@ -40,109 +40,109 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\HKLite.Sqlce.Wince\IDALayerBase.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\IDALayerBase.cs">
       <Link>IDALayerBase.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\IDao.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\IDao.cs">
       <Link>IDao.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\IDeleteBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\IDeleteBuilder.cs">
       <Link>IDeleteBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\IInsertBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\IInsertBuilder.cs">
       <Link>IInsertBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\Common.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\Common.cs">
       <Link>Inner\Common.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\Config.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\Config.cs">
       <Link>Inner\Config.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\DalLayerInfo.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\DalLayerInfo.cs">
       <Link>Inner\DalLayerInfo.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\DBHelper.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\DBHelper.cs">
       <Link>Inner\DBHelper.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\IDbProvider.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\IDbProvider.cs">
       <Link>Inner\IDbProvider.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\InEnums.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\InEnums.cs">
       <Link>Inner\InEnums.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\SqlHelper.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\SqlHelper.cs">
       <Link>Inner\SqlHelper.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Inner\WhereEntity.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Inner\WhereEntity.cs">
       <Link>Inner\WhereEntity.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\IQueryBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\IQueryBuilder.cs">
       <Link>IQueryBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\ITransacBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\ITransacBuilder.cs">
       <Link>ITransacBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\IUpdateBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\IUpdateBuilder.cs">
       <Link>IUpdateBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\AndOr.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\AndOr.cs">
       <Link>Public\AndOr.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\BaseClass.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\BaseClass.cs">
       <Link>Public\BaseClass.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\BaseInterface.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\BaseInterface.cs">
       <Link>Public\BaseInterface.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\Condition.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\Condition.cs">
       <Link>Public\Condition.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\DalyerDelegate.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\DalyerDelegate.cs">
       <Link>Public\DalyerDelegate.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\Delete_.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\Delete_.cs">
       <Link>Public\Delete_.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\EntityAttribute.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\EntityAttribute.cs">
       <Link>Public\EntityAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\GroupBy_.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\GroupBy_.cs">
       <Link>Public\GroupBy_.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\HkLiteTransaction.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\HkLiteTransaction.cs">
       <Link>Public\HkLiteTransaction.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\OrderBy_.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\OrderBy_.cs">
       <Link>Public\OrderBy_.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\Select_.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\Select_.cs">
       <Link>Public\Select_.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\Set_.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\Set_.cs">
       <Link>Public\Set_.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\Update_.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\Update_.cs">
       <Link>Public\Update_.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Public\Where_.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Public\Where_.cs">
       <Link>Public\Where_.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Service\Dao.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Service\Dao.cs">
       <Link>Service\Dao.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Service\DeleteBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Service\DeleteBuilder.cs">
       <Link>Service\DeleteBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Service\InsertBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Service\InsertBuilder.cs">
       <Link>Service\InsertBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Service\QueryBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Service\QueryBuilder.cs">
       <Link>Service\QueryBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Service\TransacBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Service\TransacBuilder.cs">
       <Link>Service\TransacBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\HKLite.Sqlce.Wince\Service\UpdateBuilder.cs">
+    <Compile Include="..\HKLite.Sqlite.Windows\Service\UpdateBuilder.cs">
       <Link>Service\UpdateBuilder.cs</Link>
     </Compile>
     <Compile Include="Service\DALayer.cs" />
