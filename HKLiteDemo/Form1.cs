@@ -13,12 +13,15 @@ namespace HKLiteDemo
 {
     public partial class Form1 : Form
     {
+        // 操作模块
         private IDao<SysUser> daoUser;
         private IDao<SysRole> daoRole;
         private IDao<SysUserRole> daoUserRole;
 
         private List<SysUser> listSource = new List<SysUser>();
         private List<SysUser> listAllUser = new List<SysUser>();
+
+        // 用户名，用于插入测试
         private List<string> listName = new List<string> { "Tom", "Jack", "Lucy", "Lina", "Linda", "Jackson", "Mike", "Alice", "Robin", "Nancy" };
 
         public Form1()
@@ -36,6 +39,7 @@ namespace HKLiteDemo
                 dataGridView1.DataSource = bindingSource1;
                 bindingSource1.ResetBindings(true);
 
+                // 初始化
                 DBAccess.Init();
                 daoUser = DBAccess.DAL.Dao<SysUser>();
                 daoRole = DBAccess.DAL.Dao<SysRole>();
@@ -51,6 +55,7 @@ namespace HKLiteDemo
         }
 
         #region BindDatas
+        // 刷新数据
         private void BindUser(bool reQuery)
         {
             if (reQuery)
@@ -127,6 +132,7 @@ namespace HKLiteDemo
         #region Update
         private void btnUpdateByKey_Click(object sender, EventArgs e)
         {
+            // 通过主键更新
             if (listSource.Count > 0)
             {
                 var entity = listSource[0];
@@ -139,6 +145,7 @@ namespace HKLiteDemo
 
         private void btnUpdateByCondition_Click(object sender, EventArgs e)
         {
+            // 通过其他条件更新
             var updateBuilder = daoUser.UpdateBuilder();
             updateBuilder.Update().Set("CName", "Jack'new name").Where().Equal("UserName", "Jack");
             updateBuilder.Run();
@@ -150,6 +157,7 @@ namespace HKLiteDemo
         #region Query
         private void btnQueryByKey_Click(object sender, EventArgs e)
         {
+            // 通过主键获取一个实体
             int userID = 1;
             if (listAllUser.Count > 0)
                 userID = listAllUser[0].ID;
@@ -164,6 +172,7 @@ namespace HKLiteDemo
 
         private void btnQueryByCondition_Click(object sender, EventArgs e)
         {
+            // 通过其他条件查询并排序
             var queryBuilder = daoUser.QueryBuilder();
             queryBuilder.Select().Where().Equal("UserName", "Jack").OrderByDesc("UserName");
             var listUser = queryBuilder.Query();
@@ -173,6 +182,7 @@ namespace HKLiteDemo
 
         private void btnQueryTop_Click(object sender, EventArgs e)
         {
+            // 获取前2条记录
             var queryBuilder = daoUser.QueryBuilder();
             queryBuilder.Select(2).Where().Like("CName", "J");
             var listUser = queryBuilder.Query();
@@ -182,6 +192,7 @@ namespace HKLiteDemo
 
         private void btnQueryColumns_Click(object sender, EventArgs e)
         {
+            // 查询指定列
             var queryBuilder = daoUser.QueryBuilder();
             queryBuilder.Select("ID","UserName","Email").Where().Like("CName", "J");
             var listUser = queryBuilder.Query();
@@ -191,6 +202,7 @@ namespace HKLiteDemo
 
         private void btnQueryCustomerCondition_Click(object sender, EventArgs e)
         {
+            // 通过自定义条件查询
             var queryBuilder = daoUser.QueryBuilder();
             queryBuilder.Select().Where().Custom("where UserName <> 'Tom'");
             var listUser = queryBuilder.Query();
@@ -200,10 +212,11 @@ namespace HKLiteDemo
 
         private void btnQuerySql_Click(object sender, EventArgs e)
         {
+            // 先创建数据，以便有数据可查
             CreateRoles();
             CreateUserRoles();
 
-            // 查询所有角色为"administrators"的用户
+            // 查询所有角色为"administrators"的用户，该查询中只要返回结果的列名与实体类SysUser属性名匹配，即可将数据放在泛型集合List中
             var queryBuilder = daoUser.QueryBuilder();
             queryBuilder.CustomSqlCommand =
                 @"select A.* from SysUser A join SysUserRole B on A.ID=B.UserID 
@@ -218,6 +231,7 @@ namespace HKLiteDemo
         #region Delete
         private void btnDeleteByKey_Click(object sender, EventArgs e)
         {
+            // 通过主键删除
             if (listSource.Count > 0)
             {
                 daoUser.DeleteByKey(listSource[0].ID);
@@ -228,6 +242,7 @@ namespace HKLiteDemo
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // 通过其他条件删除
             if (listSource.Count > 0)
             {
                 var deleteBuilder = daoUser.DeleteBuilder();
@@ -240,6 +255,7 @@ namespace HKLiteDemo
 
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
+            // 删除所有数据
             daoUser.DeleteAll();
             daoRole.DeleteAll();
             daoUserRole.DeleteAll();
@@ -251,6 +267,7 @@ namespace HKLiteDemo
         #region Transtion
         private void btnTrans1_Click(object sender, EventArgs e)
         {
+            // 事务操作1
             var trans = DBAccess.DAL.TransacBuilder();
             var insertBuilder = trans.InsertBuilder<SysUser>();
             var updateBuilder = trans.UpdateBuilder<SysUser>();
@@ -271,6 +288,7 @@ namespace HKLiteDemo
 
         private void btnTrans2_Click(object sender, EventArgs e)
         {
+            // 事务操作2
             var trans = DBAccess.DAL.GetTransaction();
             try
             {
@@ -289,6 +307,7 @@ namespace HKLiteDemo
 
         private void btnTrans3_Click(object sender, EventArgs e)
         {
+            // 事务操作3
             DBAccess.DAL.ExecuteTransac(
                 "update SysUser set CName='Jackson''s new name' where UserName='Jackson'",
                 "update SysUser set CName='Mike''s new name' where UserName='Mike'"

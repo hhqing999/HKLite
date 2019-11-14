@@ -40,7 +40,7 @@ namespace HKLiteDemo
         /// </summary>
         private static void DatabaseCreated()
         {
-            dal .ExecuteTransac (
+            dal.ExecuteTransac(
                 "create index index_SysUser_001 on SysUser(UserName)",
                 "create index index_SysRole_001 on SysRole(RoleName)"
                 );
