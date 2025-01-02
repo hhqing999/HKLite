@@ -1,8 +1,5 @@
 # HKLite
 * A simple ORM for .net, supports SQLite,SqlCE,MySql and SQL Server.
-* Can use in both Windows and Windows CE applications while using SQLite or SqlCE.
-* Automatically create if the database file does not exist while using SQLite or SqlCE.
-* Written in VS2008.
 ## Create entity class
 ```C#
 [HKLite.Entity]
